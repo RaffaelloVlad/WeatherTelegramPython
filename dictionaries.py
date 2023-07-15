@@ -1,6 +1,6 @@
 dictionaries = {
     "en":{
-        'HiText':'Good afternoon, God is in you.\nPlease сhoose a language:',
+        'HiText':'',
         'SayWriteCity':'Kindly enter the place where you want to know the weather:',
         'clear sky': 'clear sky',
         'few clouds': 'few clouds',

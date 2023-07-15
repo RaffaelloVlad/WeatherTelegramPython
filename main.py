@@ -3,6 +3,8 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 import requests
 from apikey import *
+from dictionaries import *
+
 
 
 # Установка уровня логирования
@@ -21,7 +23,7 @@ async def start_command(message: types.Message):
     # image_path = "C://Users//vlads//Desktop//BotPyWeather//20230616_193653.jpg"
     # with open(image_path, 'rb') as photo:
     #     await message.bot.send_photo(chat_id=message.chat.id, photo=photo, caption="Доброго часу, Вас вітає Бог.\nБудь ласка введіть місто в якому ви хочете дізнатися погоду:")
-    await message.reply("Доброго часу, Вас вітає Бог.\nБудь ласка введіть місто в якому ви хочете дізнатися погоду:")
+    await message.reply("Good afternoon, God is in you.\nPlease сhoose a language:")
 
 
 
