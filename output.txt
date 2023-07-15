@@ -1,0 +1,26 @@
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: kulmbach
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: kiev
+FAILD_MESSAGE: User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: kulmabach
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: kulmbach
+User ID: 720706636, First Name: юлия, Last Name: None, Username: JuliaSavc,text: кульмбах
+User ID: 720706636, First Name: юлия, Last Name: None, Username: JuliaSavc,text: харьков
+User ID: 720706636, First Name: юлия, Last Name: None, Username: JuliaSavc,text: peesten
+User ID: 720706636, First Name: юлия, Last Name: None, Username: JuliaSavc,text: new
+User ID: 720706636, First Name: юлия, Last Name: None, Username: JuliaSavc,text: екатеринбург
+FAILD_MESSAGE: User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: new_york
+FAILD_MESSAGE: User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: newyork
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: york
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: нью-йорк
+FAILD_MESSAGE: User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: new-york
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: new york city
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: new york city
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: new york city
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: new
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: kulmbach
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: харьков
+FAILD_MESSAGE: User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: dscjrbq
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: высокий
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: харків
+User ID: 748807112, First Name: Влад, Last Name: None, Username: lFYZl,text: харьков
+FAILD_MESSAGE: User ID: 748807112, First Name: Влад, Last Name: None, Username: lFYZl,text: ахуеть
+User ID: 748807112, First Name: Влад, Last Name: None, Username: lFYZl,text: харьков
