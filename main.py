@@ -5,8 +5,7 @@ import requests
 from apikey import *
 from dictionaries import *
 from aiogram.dispatcher import FSMContext
-import datetime
-
+from datetime import datetime
 
 # Установка уровня логирования
 logging.basicConfig(level=logging.INFO)
@@ -34,7 +33,7 @@ async def start_command(message: types.Message):
                         ))
 
 
-@dp.callback_query_handler(lambda callback_query: True)
+@dp.callback_query_handler(lambda callback_query: callback_query.data.startswith("lang_"))
 async def handle_language(callback_query: types.CallbackQuery, state: FSMContext):
     language = callback_query.data.replace("lang_", "")
     await state.update_data(language=language)
@@ -53,7 +52,7 @@ def kelToCel(fah):
 @dp.message_handler(content_types=types.ContentTypes.TEXT)
 async def handle_text(message: types.Message, state: FSMContext):
     
-    current_datetime = datetime.datetime.now()
+    current_datetime = datetime.now()
     formatted_datetime = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
 
     state_data = await state.get_data()
@@ -70,6 +69,8 @@ async def handle_text(message: types.Message, state: FSMContext):
         return
 
     input_message = message.text.lower()  #сообщения от пользователя
+
+    await state.update_data(input_message=input_message)
 
     weatherInfo = {}
     url = f'http://api.openweathermap.org/data/2.5/find?q={input_message}&type=like&APPID={OpenweatherAPIKey}'
@@ -90,21 +91,61 @@ async def handle_text(message: types.Message, state: FSMContext):
     weatherInfo['Temperature'] = kelToCel(data['list'][0]['main']['temp'])
     weatherInfo['weather type'] = data['list'][0]['weather'][0]['description']
 
+
     weather_type = dictionaries[language][weatherInfo['weather type']]
     weather_type_name = dictionaries[language]['WeatherTypeName']
     Temperature = dictionaries[language]['Temperature']
-
+    await state.update_data(Temperature=Temperature,weather_type_name=weather_type_name)
 
     #translation_UA = map_weather_type(weatherInfo['weather type'])
 
     result_string = f"{Temperature} {weatherInfo['Temperature']} °C\n{weather_type_name} {weather_type}"
     #result_string = f"Вы ввели: {input_message}"#test
 
+    reply_markup = types.InlineKeyboardMarkup(row_width=2)
+    reply_markup.add(
+        types.InlineKeyboardButton(text="Погода на весь день", callback_data="weather_full_day")
+    )
 
     with open(output_file, 'a', encoding="utf-8") as file:
         file.write(f"[{formatted_datetime}] User ID: {user_id}, First Name: {user_first_name}, Last Name: {user_last_name}, Username: {user_username}, Text: {input_message}\n")
 
-    await message.reply(result_string)
+    await message.reply(result_string, reply_markup=reply_markup)
+
+@dp.callback_query_handler(lambda query: query.data == "weather_full_day")
+async def handle_weather_full_day(callback_query: types.CallbackQuery, state: FSMContext):
+    message = callback_query.message  # Получаем объект сообщения из callback_query
+    state_data = await state.get_data()
+    language = state_data.get('language')
+    data = await state.get_data()
+    input_message = data.get('input_message')
+    state_data = await state.get_data()
+    Temperature = state_data.get('Temperature')
+    state_data = await state.get_data()
+    WeatherTypeName = state_data.get('weather_type_name')
+    
+    url = f'http://api.openweathermap.org/data/2.5/find?q={input_message}&type=like&APPID={OpenweatherAPIKey}'
+    res = requests.get(url)
+    data = res.json()
+
+    forecast_list = data['list']
+    weather_message = "Прогноз погоды на весь день:\n"
+
+    for forecast in forecast_list:
+        timestamp = forecast['dt']  # Дата и время прогноза
+        date = datetime.fromtimestamp(timestamp)
+        temperature = kelToCel(forecast['main']['temp'])  # Температура
+        weather_type = dictionaries[language][forecast['weather'][0]['description']]
+
+        weather_message += f"{dictionaries[language]['date and time']} {date}\n"
+        weather_message += f"{Temperature} {temperature} °C\n"
+        weather_message += f"{WeatherTypeName} {weather_type}\n\n"
+
+    # Отправляем сообщение с прогнозом погоды
+    await message.answer(weather_message)
+    await callback_query.answer()  # Ответить на запрос
+
+
 
 
 # Запуск бота
