@@ -24,3 +24,10 @@ User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov
 User ID: 748807112, First Name: ����, Last Name: None, Username: lFYZl,text: �������
 FAILD_MESSAGE: User ID: 748807112, First Name: ����, Last Name: None, Username: lFYZl,text: ������
 User ID: 748807112, First Name: ����, Last Name: None, Username: lFYZl,text: �������
+User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: �������
+[2023-07-16 22:26:52] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: �������
+[2023-07-16 22:31:26] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: gut
+FAILD_MESSAGE: User ID: 634731420, First Name: Ň̸͖̜̣̝̭̩͐͂́͆̀͜ǐ̸͂̅̈́̒ ͓̅̉͛̚k̸̡̰̙͈͔̇̍̑͗̈́͘ȉ̴̫̆ ̧͔̥̝̲͇͜ͅt̸̫̣͆̉͒͒ͅ, Last Name: None, Username: NikitosikS78,text: prettier - code formatter
+FAILD_MESSAGE: User ID: 634731420, First Name: Ň̸͖̜̣̝̭̩͐͂́͆̀͜ǐ̸͂̅̈́̒ ͓̅̉͛̚k̸̡̰̙͈͔̇̍̑͗̈́͘ȉ̴̫̆ ̧͔̥̝̲͇͜ͅt̸̫̣͆̉͒͒ͅ, Last Name: None, Username: NikitosikS78,text: пивденное
+[2023-07-16 22:32:51] User ID: 634731420, First Name: Ň̸͖̜̣̝̭̩͐͂́͆̀͜ǐ̸͂̅̈́̒ ͓̅̉͛̚k̸̡̰̙͈͔̇̍̑͗̈́͘ȉ̴̫̆ ̧͔̥̝̲͇͜ͅt̸̫̣͆̉͒͒ͅ, Last Name: None, Username: NikitosikS78, Text: kharkiv
+[2023-07-16 22:33:00] User ID: 634731420, First Name: Ň̸͖̜̣̝̭̩͐͂́͆̀͜ǐ̸͂̅̈́̒ ͓̅̉͛̚k̸̡̰̙͈͔̇̍̑͗̈́͘ȉ̴̫̆ ̧͔̥̝̲͇͜ͅt̸̫̣͆̉͒͒ͅ, Last Name: None, Username: NikitosikS78, Text: kharkiv
