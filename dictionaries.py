@@ -1,7 +1,9 @@
 dictionaries = {
     "en":{
-        'HiText':'',
+        'Temperature':'Temperature',
+        'WeatherTypeName':'Weather type: ',
         'SayWriteCity':'Kindly enter the place where you want to know the weather:',
+        'SelectLanguage':'Select Language: ',
         'clear sky': 'clear sky',
         'few clouds': 'few clouds',
         'overcast clouds': 'overcast clouds',
@@ -60,7 +62,10 @@ dictionaries = {
         'shower drizzle': 'shower drizzle'
     },
     'ua':{
+        'Temperature':'Tемпература',
+        'WeatherTypeName':'Тип погоди: ',
         'SayWriteCity':'Будь ласка, введіть місце, де ви хочете дізнатися погоду:',
+        'SelectLanguage':'Обрана мова: ',
         'clear sky': 'Чисте небо',
         'few clouds': 'Небагато хмар',
         'overcast clouds': 'хмарно затягнуте небо',
@@ -119,7 +124,10 @@ dictionaries = {
         'shower drizzle': 'дощова мряка'
     },
     'ru':{
+        'Temperature':'Температура',
+        'WeatherTypeName':'Тип погоды: ',
         'SayWriteCity':'Пожалуйста, введите место, где вы хотите узнать погоду:',
+        'SelectLanguage':'Выбран язык: ',
         'clear sky': 'Ясное небо',
         'few clouds': 'Небольшая облачность',
         'overcast clouds': 'Пасмурные облака',
@@ -178,7 +186,10 @@ dictionaries = {
         'shower drizzle': 'Дождевая морось'
     },
     'de':{
+        'Temperature':'Temperatur',
+        'WeatherTypeName':'Wettertyp: ',
         'SayWriteCity':'Bitte geben Sie den Ort ein, an dem Sie das Wetter wissen möchten:',
+        'SelectLanguage':'Sprache auswählen: ',
         'clear sky': 'Klarer Himmel',
         'few clouds': 'Wenige Wolken',
         'overcast clouds': 'Bewölkter Himmel',
