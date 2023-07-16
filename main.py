@@ -123,13 +123,15 @@ async def handle_weather_full_day(callback_query: types.CallbackQuery, state: FS
     Temperature = state_data.get('Temperature')
     state_data = await state.get_data()
     WeatherTypeName = state_data.get('weather_type_name')
-    
+    WeatherFullDay = dictionaries[language]['WeatherFullDay']
+
+
     url = f'http://api.openweathermap.org/data/2.5/find?q={input_message}&type=like&APPID={OpenweatherAPIKey}'
     res = requests.get(url)
     data = res.json()
 
     forecast_list = data['list']
-    weather_message = "Прогноз погоды на весь день:\n"
+    weather_message = f"{WeatherFullDay}\n"
 
     for forecast in forecast_list:
         timestamp = forecast['dt']  # Дата и время прогноза
