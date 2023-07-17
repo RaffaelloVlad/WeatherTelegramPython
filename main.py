@@ -1,4 +1,5 @@
 import logging
+import asyncio
 from aiogram import Bot, Dispatcher, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 import requests
@@ -6,6 +7,8 @@ from apikey import *
 from dictionaries import *
 from aiogram.dispatcher import FSMContext
 from datetime import datetime, timedelta
+import os
+
 
 # Установка уровня логирования
 logging.basicConfig(level=logging.INFO)
@@ -15,7 +18,7 @@ bot = Bot(token=f'{TelebotAPIKey}')
 storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 
-output_file = 'E://BotPyWeather//WeatherTelegramPython//output.txt'
+output_file = f'log_[{datetime.now().date()}].txt'
 
 # Обработчик команды /start
 @dp.message_handler(commands=['start'])
@@ -36,7 +39,6 @@ async def start_command(message: types.Message):
 @dp.callback_query_handler(lambda callback_query: callback_query.data.startswith("lang_"))
 async def handle_language(callback_query: types.CallbackQuery, state: FSMContext):
     language = callback_query.data.replace("lang_", "")
-    await state.update_data(language=language)
     await state.finish()
     reply_text = dictionaries[language]['SayWriteCity']
     select_text = dictionaries[language]['SelectLanguage']
@@ -83,10 +85,17 @@ async def handle_text(message: types.Message, state: FSMContext):
     user_username = message.from_user.username
 
     if data['count'] == 0:
-        with open(output_file, 'a', encoding="utf-8") as file:
-            file.write(f"[{formatted_datetime}] FAILD_MESSAGE: User ID: {user_id}, First Name: {user_first_name}, Last Name: {user_last_name}, Username: {user_username},text: {input_message}\n")
-        await message.reply("Місто не знайдено. Будь ласка, введіть правильну назву міста.")
-        return
+        if os.path.isfile(output_file):
+            with open(output_file, 'a', encoding="utf-8") as file:
+                file.write(f"[{formatted_datetime}] FAILD_MESSAGE: User ID: {user_id}, First Name: {user_first_name}, Last Name: {user_last_name}, Username: {user_username},text: {input_message}\n")
+            await message.reply("Місто не знайдено. Будь ласка, введіть правильну назву міста.")
+            return
+        else:
+            with open(output_file, 'w', encoding="utf-8") as file:
+                file.write(f"[{formatted_datetime}] FAILD_MESSAGE: User ID: {user_id}, First Name: {user_first_name}, Last Name: {user_last_name}, Username: {user_username},text: {input_message}\n")
+            await message.reply("Місто не знайдено. Будь ласка, введіть правильну назву міста.")
+            return
+        
 
     weatherInfo['Temperature'] = kelToCel(data['list'][0]['main']['temp'])
     weatherInfo['weather type'] = data['list'][0]['weather'][0]['description']
@@ -110,9 +119,13 @@ async def handle_text(message: types.Message, state: FSMContext):
         types.InlineKeyboardButton(text=f"{WeatherTomorrow}", callback_data="weather_full_day_tomorrow"),
         types.InlineKeyboardButton(text=f"{WeatherFullWeek}", callback_data="weather_full_week")
     )
+    if os.path.isfile(output_file):
+        with open(output_file, 'a', encoding="utf-8") as file:
+            file.write(f"[{formatted_datetime}] User ID: {user_id}, First Name: {user_first_name}, Last Name: {user_last_name}, Username: {user_username}, Text: {input_message}\n")
+    else:
+        with open(output_file, 'w', encoding="utf-8") as file:
+            file.write(f"[{formatted_datetime}] User ID: {user_id}, First Name: {user_first_name}, Last Name: {user_last_name}, Username: {user_username}, Text: {input_message}\n")
 
-    with open(output_file, 'a', encoding="utf-8") as file:
-        file.write(f"[{formatted_datetime}] User ID: {user_id}, First Name: {user_first_name}, Last Name: {user_last_name}, Username: {user_username}, Text: {input_message}\n")
 
     await message.reply(result_string, reply_markup=reply_markup)
 
@@ -203,6 +216,8 @@ async def handle_weather_full_week(callback_query: types.CallbackQuery, state: F
     Temperature = state_data.get('Temperature')
     WeatherTypeName = state_data.get('weather_type_name')
     WeatherFullWeek = state_data.get('WeatherFullWeek')
+
+    
     
 
     url = f'http://api.openweathermap.org/data/2.5/forecast?q={input_message}&cnt=40&APPID={OpenweatherAPIKey}'
@@ -228,9 +243,10 @@ async def handle_weather_full_week(callback_query: types.CallbackQuery, state: F
             weather_message += f"{Temperature} {temperature} °C\n"
             weather_message += f"{WeatherTypeName} {weather_type}\n\n"
 
-    # Отправляем сообщение с прогнозом погоды на неделю
     await message.answer(weather_message)
     await callback_query.answer()  # Ответить на запрос
+
+
 
 # Запуск бота
 if __name__ == '__main__':

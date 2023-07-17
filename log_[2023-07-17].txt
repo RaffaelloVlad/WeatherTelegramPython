@@ -1,0 +1,9 @@
+[2023-07-17 15:45:37] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
+[2023-07-17 15:46:52] FAILD_MESSAGE: User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: sgdd
+[2023-07-17 15:46:58] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
+[2023-07-17 18:14:39] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
+[2023-07-17 18:40:12] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
+[2023-07-17 18:40:23] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
+[2023-07-17 18:46:26] FAILD_MESSAGE: User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: да
+[2023-07-17 18:50:21] User ID: 1182366382, First Name: аня, Last Name: дудка, Username: m_iiauu, Text: london
+[2023-07-17 18:50:58] User ID: 504448199, First Name: WarriOR, Last Name: Berserker, Username: FUckin_Wiking, Text: гамбург
