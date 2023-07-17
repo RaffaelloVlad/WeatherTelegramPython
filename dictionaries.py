@@ -1,5 +1,6 @@
 dictionaries = {
     "en":{
+        'WeatherFullWeek':'Weather for the week (5 day)',
         'WeatherTomorrow':'Weather for tomorrow',
         'date and time':'date and time: ',
         'WeatherFullDay': 'Weather for the full day',
@@ -65,6 +66,7 @@ dictionaries = {
         'shower drizzle': 'shower drizzle'
     },
     'ua':{
+        'WeatherFullWeek':'Погода на тиждень (5 днів)',
         'WeatherTomorrow':'Погода на завтра',
         'date and time':'Дата і час: ',
         'WeatherFullDay': 'Прогноз погоди на весь день',
@@ -130,6 +132,7 @@ dictionaries = {
         'shower drizzle': 'дощова мряка'
     },
     'ru':{
+        'WeatherFullWeek':'Погода на неделю (5 дней)',
         'WeatherTomorrow':'Погода на завтра',
         'date and time':'Дата и время: ',
         'WeatherFullDay': 'Прогноз погоды на весь день',
@@ -195,6 +198,7 @@ dictionaries = {
         'shower drizzle': 'Дождевая морось'
     },
     'de':{
+        'WeatherFullWeek':'Wetter für die Woche (5 tag)',
         'WeatherTomorrow':'Wetter für morgen',
         'date and time':'Datum und Uhrzeit: ',
         'WeatherFullDay': 'Ganztägige Wettervorhersage',

@@ -59,3 +59,4 @@ FAILD_MESSAGE: User ID: 634731420, First Name: Ň̸͖̜̣̝̭̩͐͂́͆̀͜i̸�
 [2023-07-17 14:08:40] User ID: 748807112, First Name: Влад, Last Name: None, Username: lFYZl, Text: харьков
 [2023-07-17 14:08:57] FAILD_MESSAGE: User ID: 748807112, First Name: Влад, Last Name: None, Username: lFYZl,text: прикольно
 [2023-07-17 14:09:16] FAILD_MESSAGE: User ID: 748807112, First Name: Влад, Last Name: None, Username: lFYZl,text: прикольно вышло
+[2023-07-17 14:28:51] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
