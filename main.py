@@ -117,37 +117,40 @@ async def handle_weather_full_day(callback_query: types.CallbackQuery, state: FS
     message = callback_query.message  # Получаем объект сообщения из callback_query
     state_data = await state.get_data()
     language = state_data.get('language')
-    data = await state.get_data()
-    input_message = data.get('input_message')
-    state_data = await state.get_data()
+    input_message = state_data.get('input_message')
     Temperature = state_data.get('Temperature')
-    state_data = await state.get_data()
     WeatherTypeName = state_data.get('weather_type_name')
     WeatherFullDay = dictionaries[language]['WeatherFullDay']
 
 
-    url = f'http://api.openweathermap.org/data/2.5/find?q={input_message}&type=like&APPID={OpenweatherAPIKey}'
+    url = f'http://api.openweathermap.org/data/2.5/forecast?q={input_message}&APPID={OpenweatherAPIKey}'
+
     res = requests.get(url)
     data = res.json()
 
+
+
     forecast_list = data['list']
-    weather_message = f"{WeatherFullDay}\n"
+    weather_message = f"{WeatherFullDay}\n\n"
 
     for forecast in forecast_list:
-        timestamp = forecast['dt']  # Дата и время прогноза
-        date = datetime.fromtimestamp(timestamp)
-        temperature = kelToCel(forecast['main']['temp'])  # Температура
-        weather_type = dictionaries[language][forecast['weather'][0]['description']]
+        date = forecast['dt_txt']  # Дата и время прогноза
 
-        weather_message += f"{dictionaries[language]['date and time']} {date}\n"
-        weather_message += f"{Temperature} {temperature} °C\n"
-        weather_message += f"{WeatherTypeName} {weather_type}\n\n"
+        forecast_date = datetime.strptime(date, '%Y-%m-%d %H:%M:%S').date()
+        current_date = datetime.now().date()
+
+
+        if forecast_date == current_date:
+            temperature = kelToCel(forecast['main']['temp'])  # Температура
+            weather_type = dictionaries[language][forecast['weather'][0]['description']]
+
+            weather_message += f"{dictionaries[language]['date and time']} {date}\n"
+            weather_message += f"{Temperature} {temperature} °C\n"
+            weather_message += f"{WeatherTypeName} {weather_type}\n\n"
 
     # Отправляем сообщение с прогнозом погоды
     await message.answer(weather_message)
     await callback_query.answer()  # Ответить на запрос
-
-
 
 
 # Запуск бота

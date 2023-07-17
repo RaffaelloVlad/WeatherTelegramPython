@@ -30,7 +30,6 @@ User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov
 FAILD_MESSAGE: User ID: 634731420, First Name: Ň̸͖̜̣̝̭̩͐͂́͆̀͜ǐ̸͂̅̈́̒ ͓̅̉͛̚k̸̡̰̙͈͔̇̍̑͗̈́͘ȉ̴̫̆ ̧͔̥̝̲͇͜ͅt̸̫̣͆̉͒͒ͅ, Last Name: None, Username: NikitosikS78,text: prettier - code formatter
 FAILD_MESSAGE: User ID: 634731420, First Name: Ň̸͖̜̣̝̭̩͐͂́͆̀͜ǐ̸͂̅̈́̒ ͓̅̉͛̚k̸̡̰̙͈͔̇̍̑͗̈́͘ȉ̴̫̆ ̧͔̥̝̲͇͜ͅt̸̫̣͆̉͒͒ͅ, Last Name: None, Username: NikitosikS78,text: пивденное
 [2023-07-16 22:32:51] User ID: 634731420, First Name: Ň̸͖̜̣̝̭̩͐͂́͆̀͜ǐ̸͂̅̈́̒ ͓̅̉͛̚k̸̡̰̙͈͔̇̍̑͗̈́͘ȉ̴̫̆ ̧͔̥̝̲͇͜ͅt̸̫̣͆̉͒͒ͅ, Last Name: None, Username: NikitosikS78, Text: kharkiv
-[2023-07-16 22:33:00] User ID: 634731420, First Name: Ň̸͖̜̣̝̭̩͐͂́͆̀͜ǐ̸͂̅̈́̒ ͓̅̉͛̚k̸̡̰̙͈͔̇̍̑͗̈́͘ȉ̴̫̆ ̧͔̥̝̲͇͜ͅt̸̫̣͆̉͒͒ͅ, Last Name: None, Username: NikitosikS78, Text: kharkiv
 [2023-07-16 23:08:23] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: gut
 [2023-07-16 23:18:05] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: gut
 [2023-07-16 23:22:38] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: харьков
@@ -51,15 +50,4 @@ FAILD_MESSAGE: User ID: 634731420, First Name: Ň̸͖̜̣̝̭̩͐͂́͆̀͜i̸�
 [2023-07-17 00:00:56] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: gut
 [2023-07-17 00:08:12] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: gut
 [2023-07-17 00:13:32] FAILD_MESSAGE: User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: kulmbsch
-[2023-07-17 00:13:41] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
-[2023-07-17 00:15:06] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
-[2023-07-17 00:15:31] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
-[2023-07-17 00:16:21] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
-[2023-07-17 00:19:08] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: харьков
-[2023-07-17 00:24:59] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: харьков
-[2023-07-17 00:32:50] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: харьков
-[2023-07-17 00:36:33] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: харьков
-[2023-07-17 00:38:10] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: харьков
-[2023-07-17 00:38:38] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: харьков
-[2023-07-17 00:40:09] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: харьков
-[2023-07-17 00:51:09] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: харьков
+
