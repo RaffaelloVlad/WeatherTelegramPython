@@ -51,3 +51,11 @@ FAILD_MESSAGE: User ID: 634731420, First Name: Ň̸͖̜̣̝̭̩͐͂́͆̀͜i̸�
 [2023-07-17 00:08:12] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: gut
 [2023-07-17 00:13:32] FAILD_MESSAGE: User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov,text: kulmbsch
 
+[2023-07-17 13:48:52] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
+[2023-07-17 13:50:07] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
+[2023-07-17 13:51:11] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
+[2023-07-17 13:56:24] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
+[2023-07-17 13:57:22] User ID: 651709727, First Name: Vlad, Last Name: Savchenko, Username: Raffaellov, Text: kulmbach
+[2023-07-17 14:08:40] User ID: 748807112, First Name: Влад, Last Name: None, Username: lFYZl, Text: харьков
+[2023-07-17 14:08:57] FAILD_MESSAGE: User ID: 748807112, First Name: Влад, Last Name: None, Username: lFYZl,text: прикольно
+[2023-07-17 14:09:16] FAILD_MESSAGE: User ID: 748807112, First Name: Влад, Last Name: None, Username: lFYZl,text: прикольно вышло

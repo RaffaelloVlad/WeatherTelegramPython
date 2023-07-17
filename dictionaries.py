@@ -1,7 +1,8 @@
 dictionaries = {
     "en":{
+        'WeatherTomorrow':'Weather for tomorrow',
         'date and time':'date and time: ',
-        'WeatherFullDay': 'Weather for the full day: ',
+        'WeatherFullDay': 'Weather for the full day',
         'Temperature':'Temperature',
         'WeatherTypeName':'Weather type: ',
         'SayWriteCity':'Kindly enter the place where you want to know the weather:',
@@ -64,8 +65,9 @@ dictionaries = {
         'shower drizzle': 'shower drizzle'
     },
     'ua':{
+        'WeatherTomorrow':'Погода на завтра',
         'date and time':'Дата і час: ',
-        'WeatherFullDay': 'Прогноз погоди на весь день: ',
+        'WeatherFullDay': 'Прогноз погоди на весь день',
         'Temperature':'Tемпература',
         'WeatherTypeName':'Тип погоди: ',
         'SayWriteCity':'Будь ласка, введіть місце, де ви хочете дізнатися погоду:',
@@ -128,8 +130,9 @@ dictionaries = {
         'shower drizzle': 'дощова мряка'
     },
     'ru':{
+        'WeatherTomorrow':'Погода на завтра',
         'date and time':'Дата и время: ',
-        'WeatherFullDay': 'Прогноз погоды на весь день: ',
+        'WeatherFullDay': 'Прогноз погоды на весь день',
         'Temperature':'Температура',
         'WeatherTypeName':'Тип погоды: ',
         'SayWriteCity':'Пожалуйста, введите место, где вы хотите узнать погоду:',
@@ -192,8 +195,9 @@ dictionaries = {
         'shower drizzle': 'Дождевая морось'
     },
     'de':{
+        'WeatherTomorrow':'Wetter für morgen',
         'date and time':'Datum und Uhrzeit: ',
-        'WeatherFullDay': 'Ganztägige Wettervorhersage: ',
+        'WeatherFullDay': 'Ganztägige Wettervorhersage',
         'Temperature':'Temperatur',
         'WeatherTypeName':'Wettertyp: ',
         'SayWriteCity':'Bitte geben Sie den Ort ein, an dem Sie das Wetter wissen möchten:',

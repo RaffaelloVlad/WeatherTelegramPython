@@ -5,7 +5,7 @@ import requests
 from apikey import *
 from dictionaries import *
 from aiogram.dispatcher import FSMContext
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Установка уровня логирования
 logging.basicConfig(level=logging.INFO)
@@ -95,16 +95,18 @@ async def handle_text(message: types.Message, state: FSMContext):
     weather_type = dictionaries[language][weatherInfo['weather type']]
     weather_type_name = dictionaries[language]['WeatherTypeName']
     Temperature = dictionaries[language]['Temperature']
-    await state.update_data(Temperature=Temperature,weather_type_name=weather_type_name)
-
-    #translation_UA = map_weather_type(weatherInfo['weather type'])
 
     result_string = f"{Temperature} {weatherInfo['Temperature']} °C\n{weather_type_name} {weather_type}"
     #result_string = f"Вы ввели: {input_message}"#test
+    WeatherFullDay = dictionaries[language]['WeatherFullDay']
+    WeatherTomorrow = dictionaries[language]['WeatherTomorrow']
+    await state.update_data(WeatherFullDay=WeatherFullDay,WeatherTomorrow=WeatherTomorrow,Temperature=Temperature,weather_type_name=weather_type_name)
+    
 
     reply_markup = types.InlineKeyboardMarkup(row_width=2)
     reply_markup.add(
-        types.InlineKeyboardButton(text="Погода на весь день", callback_data="weather_full_day")
+        types.InlineKeyboardButton(text=f"{WeatherFullDay}", callback_data="weather_full_day"),
+        types.InlineKeyboardButton(text=f"{WeatherTomorrow}", callback_data="weather_full_day_tomorrow")
     )
 
     with open(output_file, 'a', encoding="utf-8") as file:
@@ -131,7 +133,7 @@ async def handle_weather_full_day(callback_query: types.CallbackQuery, state: FS
 
 
     forecast_list = data['list']
-    weather_message = f"{WeatherFullDay}\n\n"
+    weather_message = f"{WeatherFullDay}: \n\n"
 
     for forecast in forecast_list:
         date = forecast['dt_txt']  # Дата и время прогноза
@@ -152,6 +154,43 @@ async def handle_weather_full_day(callback_query: types.CallbackQuery, state: FS
     await message.answer(weather_message)
     await callback_query.answer()  # Ответить на запрос
 
+@dp.callback_query_handler(lambda query: query.data == "weather_full_day_tomorrow")
+async def handle_weather_full_day(callback_query: types.CallbackQuery, state: FSMContext):
+    message = callback_query.message  # Получаем объект сообщения из callback_query
+    state_data = await state.get_data()
+    language = state_data.get('language')
+    input_message = state_data.get('input_message')
+    Temperature = state_data.get('Temperature')
+    WeatherTypeName = state_data.get('weather_type_name')
+    WeatherTomorrow = state_data.get('WeatherTomorrow')
+
+    url = f'http://api.openweathermap.org/data/2.5/forecast?q={input_message}&APPID={OpenweatherAPIKey}'
+
+    res = requests.get(url)
+    data = res.json()
+
+    forecast_list = data['list']
+    weather_message = f"{WeatherTomorrow}: \n\n"
+
+    current_date = datetime.now().date()
+    next_day = current_date + timedelta(days=1)
+
+    for forecast in forecast_list:
+        date = forecast['dt_txt']  # Дата и время прогноза
+
+        forecast_date = datetime.strptime(date, '%Y-%m-%d %H:%M:%S').date()
+
+        if forecast_date == next_day:
+            temperature = kelToCel(forecast['main']['temp'])  # Температура
+            weather_type = dictionaries[language][forecast['weather'][0]['description']]
+
+            weather_message += f"{dictionaries[language]['date and time']} {date}\n"
+            weather_message += f"{Temperature} {temperature} °C\n"
+            weather_message += f"{WeatherTypeName} {weather_type}\n\n"
+
+    # Отправляем сообщение с прогнозом погоды
+    await message.answer(weather_message)
+    await callback_query.answer()  # Ответить на запрос
 
 # Запуск бота
 if __name__ == '__main__':
